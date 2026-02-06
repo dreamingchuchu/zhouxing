@@ -16,13 +16,13 @@
         #master-frame {
             position: fixed; inset: 0; z-index: 9999; pointer-events: none;
             border: 60px solid transparent;
-            border-image: url('frame.jpg') 100 round;
+            border-image: url('bg.jpg') 100 round;
         }
 
         html { scroll-behavior: smooth; }
         body {
             margin: 0; padding: 0; background: var(--base-black);
-            background-image: url('bg.jpg');
+            background-image: url('frame.jpg');
             background-size: cover; background-position: center; background-attachment: fixed;
             color: var(--white); font-family: 'Georgia', serif;
             overflow-x: hidden; scroll-snap-type: y proximity;
@@ -237,4 +237,5 @@
     window.onload = () => { render(); let angle = 0; const scan = document.getElementById('auto-scanner'); function anim() { angle += 0.012; const x = 50 + Math.cos(angle)*35, y = 50 + Math.sin(angle*0.8)*40; if(scan){ scan.style.left = `calc(${x}% - 75px)`; scan.style.top = `calc(${y}% - 75px)`; scan.style.backgroundPosition = `${x}% ${y}%`; } requestAnimationFrame(anim); } anim(); };
 </script>
 </body>
+
 </html>
